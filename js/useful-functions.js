@@ -1,3 +1,5 @@
+"use strict";
+
 var brance = {
         color: function (newColor){
             document.body.style.color = newColor;
@@ -10,3 +12,8 @@ var brance = {
             html.innerHTML = "<h1>" + thingToLog + "</h1>";
             document.body.appendChild(html);
     }}
+
+// var spacing = '10px';
+// var styles =
+//     "padding: " + spacing + "; background-color: white; color: green; font-style: italic; border: 1px solid black; font-size: 2em;";
+// console.log('%cGeeks for Geeks', styles);
