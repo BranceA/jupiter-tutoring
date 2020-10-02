@@ -13,6 +13,19 @@ var brance = {
             document.body.appendChild(html);
     }}
 
+
+
+
+
+    var test = {
+        name: "The dude",
+        age: 40,
+        greeting: function (){brance.log("Oh hi.")}
+    }
+
+
+
+
 // var spacing = '10px';
 // var styles =
 //     "padding: " + spacing + "; background-color: white; color: green; font-style: italic; border: 1px solid black; font-size: 2em;";
