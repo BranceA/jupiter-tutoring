@@ -5,9 +5,7 @@ var wantsToPlay = confirm("You wanna play rock, paper, scissors?")
 while (wantsToPlay){
     var someoneWon = false;
     while (!someoneWon){
-        // Asking player for a choice and capturing response in variable
         var playerChoice = prompt("Type rock paper or scissors");
-        // Calls function that returns a random choice between rock paper or scissors and stores the return in a variable
         var computerChoice = getComputerChoice();
         alert("ROCK PAPER SCISSORS!!!");
         alert("Player: " + playerChoice + "    |     Computer: " + computerChoice)
@@ -61,7 +59,7 @@ function findWinner(pChoice, cChoice){
 
 
 
-// //Intial check to see if the user wants to play. If no then no code will run in the while loop.
+// //Initial check to see if the user wants to play. If no then no code will run in the while loop.
 // var wantsToPlay = confirm("You wanna play rock, paper, scissors?")
 //
 // // This loop will continue to run as long as the player keeps wanting to play.
@@ -106,3 +104,43 @@ function findWinner(pChoice, cChoice){
 //
 // // This is outside both loops. This will only run if the player chooses not to play or not play again.
 // alert("See you later.")
+//
+//
+// // function to get a random choice for the computer
+// function getComputerChoice(){
+//     // This line gets a random number between 1 and 3 and stores it in a variable
+//     var randomChoice = Math.floor((Math.random() * 3) + 1);
+//     // The switch statement will reassign randomChoice to the string of "rock" "paper" or "scissors" depending on the random number
+//     switch (randomChoice){
+//         case 1:
+//             randomChoice = "rock";
+//             break;
+//         case 2:
+//             randomChoice = "paper";
+//             break;
+//         case 3:
+//             randomChoice = "scissors";
+//             break;
+//     }
+//     // This will return randomChoice after it has been reassigned to a string.
+//     return randomChoice;
+// }
+//
+// // this function will determine the winner and return the appropriate message to display.
+// // The parameters are for the player choice and the computer choice.
+// function findWinner(pChoice, cChoice){
+//     // an if/else block is used to check all combinations of player and computer choices that don't tie.
+//     if(pChoice === "rock" && cChoice === "scissors"){
+//         return "YOU WIN!!!";
+//     }else if(pChoice === "rock" && cChoice === "paper"){
+//         return "YOU LOSE!!!";
+//     }else if(pChoice === "paper" && cChoice === "rock"){
+//         return "YOU WIN!!!";
+//     }else if(pChoice === "paper" && cChoice === "scissors"){
+//         return "YOU LOSE!!!";
+//     }else if(pChoice === "scissors" && cChoice === "paper"){
+//         return "YOU WIN!!!";
+//     }else if(pChoice === "scissors" && cChoice === "rock"){
+//         return "YOU LOSE";
+//     }
+// }
