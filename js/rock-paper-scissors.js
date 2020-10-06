@@ -23,8 +23,6 @@ alert("See you later.")
 
 
 
-
-
 function getComputerChoice(){
     var randomChoice = Math.floor((Math.random() * 3) + 1);
     switch (randomChoice){
