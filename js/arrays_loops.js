@@ -33,5 +33,55 @@ function loopBreakdown(arrayOfNumbers){
     }
 }
 
+var pies = ["apple", "cherry", "key lime", "pecan", "key lime", 3.14, "pumpkin"];
 
+brance.log(findSecondIndexOfKeylime(pies));
 
+function findSecondIndexOfKeylime(pieArray){
+    var totalKeylimes = 0;
+    for(var i = 0; i < pieArray.length; i++){
+        if(pieArray[i] === "key lime"){
+            if(totalKeylimes === 0){
+                totalKeylimes++;
+            }else {
+                return i;
+            }
+        }
+    }
+
+    return "There ain't 2 key lime pies."
+}
+
+function findSecondIndexOfKeylimeRefactor(pieArray){
+    for(var i = pieArray.indexOf("key lime") + 1; i < pieArray.length; i++){
+        if(pieArray[i] === "key lime"){
+            return i;
+        }
+    }
+    return "There ain't 2 key lime pies."
+}
+
+var matryoshka = {
+    level: 1,
+    whatIsHere: "Properties are deadend: a string, rabbithole: another object",
+    deadend: "Ha! You can't go any further",
+    rabbithole: {
+        level: 2,
+        whatIsHere: "Properties are colors: an array, goDeeper: another object",
+        colors: ["red", "yellow", "blue", "orange", "green"],
+        goDeeper: {
+            level: 3,
+            whatIsHere: "Properties are helloWorld: a function, goEvenDeeper: another object.",
+            helloWorld: function (){console.log("Hello World.")},
+            goEvenDeeper: {
+                level: 4,
+                whatIsHere: "Properties are totalLevels: a number, bottom: another object",
+                totalLevels: 5,
+                bottom: {
+                    level: 5,
+                    whatIsHere: "Nothing. You've reached the bottom."
+                }
+            }
+        }
+    }
+}
