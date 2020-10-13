@@ -29,6 +29,7 @@
 //     i++
 // }
 
+
 // for(var i = 0; i < 10; i++){
 //     brance.log(i);
 // }
@@ -41,6 +42,12 @@
 // 1: this code runs once when the loop starts
 // 2: this is the stopping condition. the loop runs over and over again while the stopping condition is true
 // 3: this code runs every time we reach the end of the loop
+
+
+
+
+
+
 
 // var outsideIterator = 0;
 // for(brance.log("The loop is starting."); outsideIterator < 5; brance.log("We made it to the end of the loop.")){
@@ -89,36 +96,21 @@ function loopBreakdown(arrayOfNumbers){
 function makeAListOfThings(){
     var wantsToAdAnotherItem = true;
     var bucket = [];
-    while (wantsToAdAnotherItem){
+    while (wantsToAdAnotherItem === true){
         var newItem = prompt("Enter what you want added to the list.");
         bucket.push(newItem);
         wantsToAdAnotherItem = confirm("Add another item?");
     }
 
-    bucket.forEach(function (item, index) {
-        brance.log(index + ": " + item);
-    })
+    // bucket.forEach(function (theThing, index) {
+    //     brance.log((index + 1) + ": " + theThing);
+    // })
+    for(var index = 0; index < bucket.length; index++){
+        brance.log((index + 1) + ": " + bucket[index]);
+    }
 }
 
 // makeAListOfThings();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 var pies = ["apple", "cherry", "key lime", "pecan", "key lime", 3.14, "pumpkin"];
@@ -147,3 +139,69 @@ function findSecondIndexOfKeylimeRefactor(pieArray){
     }
     return "There ain't 2 key lime pies."
 }
+
+
+
+
+// brance.log(isPrime(7));
+// brance.log(isPrime(12));
+// brance.log(isPrime(71));
+// brance.log(isPrime(44));
+
+// Write a function called isPrime that takes in a number and returns if it is a prime number
+
+function isPrime(number){
+    // a number that is only divisible by 1 and itself
+    // 7 is prime.
+    var factors = 0;
+    for(var i = 1; i <= number; i++){
+        if(number % i === 0){
+            factors++;
+        }
+    }
+    // return a boolean
+    return factors === 2;
+}
+
+
+// takes in an array of numbers
+// returns true if any numbers are even
+// check for empty array
+
+function hasEvens(arrayToCheck){
+    var foundAnEven = false;
+    arrayToCheck.forEach(function (oneNumber) {
+        if(oneNumber % 2 === 0){
+            foundAnEven = true;
+        }
+    })
+    return foundAnEven;
+}
+
+brance.log(hasEvens(numbers))
+
+var emptyArray = [];
+var oddArray = [1, 5, 9, 23, 89]
+
+brance.log(hasEvens(emptyArray))
+brance.log(hasEvens(oddArray))
+
+// write a function takes in an array of numbers
+// returns the median number
+
+function median(arrayOfNumbers){
+    arrayOfNumbers = arrayOfNumbers.sort(function (a, b) { return a + b });
+    var middlePoint = arrayOfNumbers.length / 2;
+    if(arrayOfNumbers.length % 2 === 1){
+        // middlePoint = Math.floor(middlePoint);
+        middlePoint -= .5;
+        return arrayOfNumbers[middlePoint];
+    } else {
+        var firstNumber = arrayOfNumbers[middlePoint];
+        var secondNumber = arrayOfNumbers[middlePoint - 1];
+        return (firstNumber + secondNumber) / 2;
+    }
+}
+
+brance.log(median(oddArray))
+brance.log(median(numbers))
