@@ -178,30 +178,76 @@ function hasEvens(arrayToCheck){
     return foundAnEven;
 }
 
-brance.log(hasEvens(numbers))
+// brance.log(hasEvens(numbers))
 
 var emptyArray = [];
 var oddArray = [1, 5, 9, 23, 89]
 
-brance.log(hasEvens(emptyArray))
-brance.log(hasEvens(oddArray))
+// brance.log(hasEvens(emptyArray))
+// brance.log(hasEvens(oddArray))
 
 // write a function takes in an array of numbers
 // returns the median number
 
 function median(arrayOfNumbers){
-    arrayOfNumbers = arrayOfNumbers.sort(function (a, b) { return a + b });
+    arrayOfNumbers = arrayOfNumbers.sort(function (a, b) { return a - b });
     var middlePoint = arrayOfNumbers.length / 2;
     if(arrayOfNumbers.length % 2 === 1){
         // middlePoint = Math.floor(middlePoint);
         middlePoint -= .5;
         return arrayOfNumbers[middlePoint];
     } else {
+        brance.log(arrayOfNumbers);
         var firstNumber = arrayOfNumbers[middlePoint];
         var secondNumber = arrayOfNumbers[middlePoint - 1];
         return (firstNumber + secondNumber) / 2;
     }
 }
 
-brance.log(median(oddArray))
-brance.log(median(numbers))
+// brance.log(median(oddArray))
+// brance.log(median(numbers))
+
+
+
+// ======================= 10/19 after class ================================
+
+//Takes in an array
+//Returns first name that starts with J
+
+var names = [null, "hank", "jim", 22, "gertrude", 8, "john", "sally", "james", false, "Hank", undefined, NaN];
+
+function doSomething(array){
+    var bucket = [];
+    for(var i = 0; i < array.length; i++){
+        if(typeof array[i] === "string"){
+            if(array[i].charAt(0).toLowerCase() === "j"){
+                bucket.push(array[i]);
+            }
+        }
+    }
+    // bucket = ["jim", "john", "james"]
+    bucket.sort();
+    // bucket = ["james", "jim", "john"]
+
+    return bucket;
+}
+
+// brance.log(doSomething(names));
+
+var objectception = {
+    whatIsThis: "Crazy looking object.",
+    theAnswer: 42,
+    sandwiches: [
+        {bread: "white", meat: "ham"},
+        {bread: "sour dough", meat: "turkey"},
+        {bread: "rye", meat: "roast beef"},
+        {bread: "wheat", meat: "steak", price: 20.20}
+    ]
+}
+
+// console.log(objectception.sandwiches[0]);
+
+objectception.sandwiches.forEach(function (sandwich) {
+    brance.log(sandwich.bread);
+    brance.log(sandwich.meat);
+})
