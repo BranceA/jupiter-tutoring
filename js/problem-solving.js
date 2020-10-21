@@ -53,34 +53,6 @@ function isPalindrome(word){
     return word === reversedWord;
 }
 
-function isPalindromeBreakdown(word){
-    var reversedWord = word;
-    brance.log(reversedWord);
-    reversedWord = reversedWord.split("");
-    brance.log("reverseWord after .split(\"\"): " + reversedWord);
-    reversedWord = reversedWord.reverse();
-    brance.log("reverseWord after .reverse(): " + reversedWord);
-    reversedWord = reversedWord.join("");
-    brance.log("reverseWord after .join(\"\"): " + reversedWord);
-    brance.log("The word was " + word + " and after we reverse it, the word is " + reversedWord);
-    return word === reversedWord;
-}
-
-function isPalindromeTwo(word){
-    var reversedWord = "";
-
-    for(var i = word.length - 1; i >= 0; i--){
-        reversedWord += word.charAt(i);
-    }
-
-    return word === reversedWord;
-}
-
-// brance.log(isPalindrome("racecar"));
-// brance.log(isPalindrome("car"));
-// brance.log(isPalindrome("bob"));
-// brance.log(isPalindromeBreakdown("potato"));
-
 
 // https://www.java67.com/2018/05/top-75-programming-interview-questions-answers.html
 // 1. How to find the missing number in a given integer array of 1 to 50?
