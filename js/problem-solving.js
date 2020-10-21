@@ -77,6 +77,7 @@ function isAnagram(wordOne, wordTwo){
     return charArrayOne === charArrayTwo;
 }
 
+
 // brance.log(isAnagram("dog", "god"));
 
 
@@ -114,3 +115,83 @@ function isPalindromeTwo(word){
 // brance.log(isPalindrome("racecar"));
 // brance.log(isPalindrome("car"));
 // brance.log(isPalindrome("bob"));
+// brance.log(isPalindromeBreakdown("potato"));
+
+// Write a function that prints a Floyd Triangle
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+
+function printFloyd(){
+    var currentNumber = 1;
+    for(var i = 1; i <= 4; i++){
+        var currentRow = "";
+        for(var j = 1; j <= i; j++){
+            currentRow += currentNumber + " ";
+            currentNumber++;
+        }
+        brance.log(currentRow);
+    }
+}
+// printFloyd();
+
+//https://www.educative.io/blog/level-up-javascript-coding-challenges
+
+//Write a function that accepts an array of strings. Return the longest string.
+
+//Write a function that takes a string, and returns the character that is most commonly used in the string.
+
+//Given a string possibly containing three types of braces ({}, [], ()),
+//write a function that returns a Boolean indicating whether the given string contains a valid nesting of braces.
+
+function isValidNesting(string){
+    var curlyCount = 0;
+    var squareCount = 0;
+    var parenthesesCount = 0;
+
+    for(var i = 0; i < string.length; i++){
+        var currentChar = string.charAt(i);
+        switch (currentChar){
+            case "{":
+                curlyCount++;
+                break;
+            case "}":
+                curlyCount--;
+                break;
+            case "[":
+                squareCount++;
+                break;
+            case "]":
+                squareCount--;
+                break;
+            case "(":
+                parenthesesCount++;
+                break;
+            case ")":
+                parenthesesCount--;
+                break;
+        }
+    }
+
+    return (squareCount + curlyCount + parenthesesCount) === 0;
+}
+
+// brance.log(isValidNesting("if(this works) [we good] [probably] {At least I hope}"));
+// brance.log(isValidNesting("if(this works) we good] [probably] {At least I hope}"));
+
+
+//https://www.florin-pop.com/blog/2019/04/jcc-create-a-phone-number/
+// Write a function that accepts an array of 10 integers,
+// that returns a string of those numbers in the form of a phone number.
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+
+// https://codeguppy.com/code.html?RHA714FYio8gWgmjWYPz
+//Coding challenge #17: Calculate the sum of digits of a positive integer number
+
+
+// Maybe?
+//You will be provided with an initial array (the first argument in the destroyer function),
+// followed by one or more arguments.
+// Remove all elements from the initial array that are of the same value as these arguments.
