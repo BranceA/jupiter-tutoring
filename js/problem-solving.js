@@ -128,3 +128,12 @@ var fortyNineNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1
 // https://codeguppy.com/code.html?RHA714FYio8gWgmjWYPz
 //Coding challenge #17: Calculate the sum of digits of a positive integer number
 
+
+//https://codeguppy.com/code.html?bUduoyY6FfwV5nQGdXzH
+//Coding challenge #26: Create a function that will receive two arrays
+// and will return an array with elements that are in the first array but not in the second
+
+
+
+//https://codeguppy.com/code.html?OJoMXT4GKasSfNeX4hjH
+//Coding challenge #31a. Create a function that will return the number of words in a text
