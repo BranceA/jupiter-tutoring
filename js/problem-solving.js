@@ -53,14 +53,97 @@ function isPalindrome(word){
     return word === reversedWord;
 }
 
+function isPalindromeBreakdown(word){
+    var reversedWord = word;
+    brance.log(reversedWord);
+    reversedWord = reversedWord.split("");
+    console.log(reversedWord);
+    reversedWord = reversedWord.reverse();
+    console.log(reversedWord);
+    reversedWord = reversedWord.join("");
+    brance.log(reversedWord);
+
+    return reversedWord === word;
+}
+
+
+function isPalindromeTwo(word){
+    var reversedWord = "";
+    for(var i = word.length - 1; i >= 0; i--){
+        reversedWord += word[i];
+    }
+
+    return reversedWord === word;
+}
+
+// brance.log(isPalindromeTwo("tacocat"))
+
+
+
+
+
+
+
 
 // https://www.java67.com/2018/05/top-75-programming-interview-questions-answers.html
 // 1. How to find the missing number in a given integer array of 1 to 50?
 
 var fortyNineNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
 
+// Array of numbers from 1 to 50
+// 1 number will be missing and I need to find it
+// Probably a loop
+// returning 1 number
+// these are in order then look at a number and see if the next number +1
+
+// return a number if it's missing
+function whatMissingNumber(numberArray){
+    if(numberArray[0] === 2){
+        return 1;
+    }
+
+    for(var i = 0; i < numberArray.length; i++){
+        if(numberArray[i] !== numberArray[i + 1] - 1){
+            return numberArray[i] + 1;
+        }
+    }
+
+
+}
+
+// brance.log(whatMissingNumber(fortyNineNumbers))
+
+
+
+
+
+
+
 
 // 12. How to check if two Strings are anagrams of each other?
+
+// 2 parameters to get the strings I wanna check
+// What is an anagram? Same letters in different order to make different words
+
+// computer don't care what they are in
+// if the same letters are present we're good
+
+
+function isAnagrams(string1, string2){
+
+    var charArray1 = string1.split("").sort().join("");
+    var charArray2 = string2.split("").sort().join("");
+
+    return charArray1 === charArray2;
+}
+
+
+// brance.log(isAnagrams("egg", "geg"));
+
+// brance.log(isAnagrams("goat", "goats"));
+
+
+
 
 
 // Write a function that prints a Floyd Triangle
@@ -70,14 +153,67 @@ var fortyNineNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1
 // 7 8 9 10
 
 
+
+function floyd(){
+    var count = 1;
+    for(var i = 1; i <= 4; i++){
+        var rowOutput = "";
+        for(var j = 1; j <= i; j++){
+            rowOutput = rowOutput + count + " ";
+            count++
+        }
+        brance.log(rowOutput);
+    }
+}
+
+// floyd();
+
+
+
+
+
+
+
+
+
 //https://www.educative.io/blog/level-up-javascript-coding-challenges
 
 //Write a function that accepts an array of strings. Return the longest string.
 
 
+
+
 //Write a function that takes a string, and returns the character that is most commonly used in the string.
 
+// takes in a string --> a parameter
+// whatever is in the string, what shows up the most
+// pretty what letter count is highest
 
+// turn into an array and separate counters
+
+// put in an array and sort. at least group same characters
+
+// probably going to want to loop
+
+// banana
+
+function mostCommonChar(word){
+    var wordArray = word.split("").sort();
+    var currentHighestCount = 0;
+    var currentCharWinner = null;
+    while(wordArray.length > 0){
+        if(wordArray.lastIndexOf(wordArray[0]) + 1 > currentHighestCount && wordArray[0] !== currentCharWinner){
+            currentCharWinner = wordArray[0];
+            currentHighestCount = wordArray.lastIndexOf(wordArray[0]) + 1;
+        }
+        wordArray.shift();
+    }
+    return currentCharWinner;
+}
+
+console.log(mostCommonChar("banana"));
+console.log(mostCommonChar("tennessee"));
+console.log(mostCommonChar("potato"));
 
 
 //Given a string possibly containing three types of braces ({}, [], ()),
