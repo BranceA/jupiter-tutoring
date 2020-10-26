@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #big-div{
+            background: red;
+            height: 100vh;
+            /*display: flex;*/
+        }
+
+        #div-1{
+            background: green;
+            height: 5em;
+            width: 5em;
+        }
+
+        #div-2{
+            background: orange;
+            height: 5em;
+            width: 5em;
+        }
+
+        #div-3{
+            background: blue;
+            height: 5em;
+            width: 5em;
+        }
+    </style>
+</head>
+<body>
+<div id="big-div">
+    <div id="div-1"></div>
+    <div id="div-2"></div>
+    <div id="div-3"></div>
+</div>
+<script>
+    var bigDiv = document.getElementById("big-div");
+    if(window.getComputedStyle(bigDiv).display === "flex"){
+        bigDiv.innerHTML = "<img id='mr_t' src=\"images/t_flex.jpg\">";
+        document.getElementById("mr_t").style.width = "100%";
+    }
+</script>
+</body>
+</html>

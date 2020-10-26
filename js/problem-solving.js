@@ -211,9 +211,42 @@ function mostCommonChar(word){
     return currentCharWinner;
 }
 
-console.log(mostCommonChar("banana"));
-console.log(mostCommonChar("tennessee"));
-console.log(mostCommonChar("potato"));
+function samsMostCommonChar(word){
+    var wordArray = word.split("");
+    var chars = [];
+    var tally = [];
+    for(var i = 0; i < wordArray.length; i++){
+        if(chars.indexOf(wordArray[i]) === -1){
+            chars = [...chars, wordArray[i]];
+            tally = [...tally, 1];
+        }else{
+            tally[chars.indexOf(wordArray[i])] = tally[chars.indexOf(wordArray[i])] + 1;
+        }
+    }
+    var highestTally = Math.max(...tally)
+    var highestCharIndex = tally.indexOf(highestTally)
+    return chars[highestCharIndex];
+}
+
+function countingChars(str){
+    var charCount = {};
+    var maxCharCount = 0;
+    var maxChar = '';
+    for(var i = 0; i < str.length; i++) {
+        charCount[str[i]] = ++charCount[str[i]] || 1;
+    }
+    for(var key in charCount) {
+        if(charCount[key] >= maxCharCount) {
+            maxCharCount = charCount[key]
+            maxChar = key;
+        }
+    }
+    return maxChar;
+}
+
+brance.log(mostCommonChar("banana"));
+brance.log(mostCommonChar("tennessee"));
+brance.log(mostCommonChar("potato"));
 
 
 //Given a string possibly containing three types of braces ({}, [], ()),
