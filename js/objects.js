@@ -24,3 +24,66 @@ var matryoshka = {
         }
     }
 }
+
+var rectangleHeight = 6;
+var rectangleWidth = 15;
+var rectangleBackground = "purple";
+
+function lameRectangleMaker(recHeight, recWidth, recColor){
+    var newRectangle = document.createElement("div");
+    newRectangle.style.height = recHeight + "em";
+    newRectangle.style.width = recWidth + "em";
+    newRectangle.style.background = recColor;
+    document.body.append(newRectangle);
+}
+
+lameRectangleMaker(rectangleHeight, rectangleWidth, rectangleBackground);
+
+
+
+var rectangle = {
+    width: 8,
+    height: 3,
+    rectangleColor: "blue"
+}
+
+function makeRectangle(rectangleObject){
+    var newRectangle = document.createElement("div");
+    newRectangle.style.height = rectangleObject.height + "em";
+    newRectangle.style.width = rectangleObject.width + "em";
+    newRectangle.style.background = rectangleObject.rectangleColor;
+    document.body.append(newRectangle);
+}
+
+makeRectangle(rectangle);
+
+
+var rectangles = [
+    {
+        width: 4,
+        height: 10,
+        rectangleColor: "green"
+    },
+    {
+        width: 11,
+        height: 11,
+        rectangleColor: "pink"
+    },
+    {
+        width: 9,
+        height: 2,
+        rectangleColor: "orange"
+    }
+]
+
+function makeRectangles(rectangleObjectArray){
+    rectangleObjectArray.forEach(function (rectangle) {
+        var newRectangle = document.createElement("div");
+        newRectangle.style.height = rectangle.height + "em";
+        newRectangle.style.width = rectangle.width + "em";
+        newRectangle.style.background = rectangle.rectangleColor;
+        document.body.append(newRectangle);
+    })
+}
+
+// makeRectangles(rectangles);
