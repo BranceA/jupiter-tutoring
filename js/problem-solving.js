@@ -244,9 +244,9 @@ function countingChars(str){
     return maxChar;
 }
 
-brance.log(mostCommonChar("banana"));
-brance.log(mostCommonChar("tennessee"));
-brance.log(mostCommonChar("potato"));
+// brance.log(mostCommonChar("banana"));
+// brance.log(mostCommonChar("tennessee"));
+// brance.log(mostCommonChar("potato"));
 
 
 //Given a string possibly containing three types of braces ({}, [], ()),
@@ -274,7 +274,3 @@ brance.log(mostCommonChar("potato"));
 //Coding challenge #26: Create a function that will receive two arrays
 // and will return an array with elements that are in the first array but not in the second
 
-
-
-//https://codeguppy.com/code.html?OJoMXT4GKasSfNeX4hjH
-//Coding challenge #31a. Create a function that will return the number of words in a text

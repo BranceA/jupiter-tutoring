@@ -55,7 +55,7 @@ function makeRectangle(rectangleObject){
     document.body.append(newRectangle);
 }
 
-makeRectangle(rectangle);
+// makeRectangle(rectangle);
 
 
 var rectangles = [
@@ -87,3 +87,4 @@ function makeRectangles(rectangleObjectArray){
 }
 
 // makeRectangles(rectangles);
+
