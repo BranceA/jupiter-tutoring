@@ -295,7 +295,7 @@ function countingChars(str){
 function numberDeets(possibleNumber){
     if(!possibleNumber.match(/\d/g) || possibleNumber.match(/[a-d f-z]/g)){
         return possibleNumber + " ain't a number."
-    }else if(possibleNumber.match(/\d+e\d+/)){
+    }else if(possibleNumber.match(/^\d+[e]\d+$/)){
         return possibleNumber + " is a number in scientific notation."
     }else if(possibleNumber.match(/-\d+\.\d+/)){
         return possibleNumber + " is a negative real number."
@@ -303,8 +303,10 @@ function numberDeets(possibleNumber){
         return possibleNumber + " is a positive real number."
     }else if(possibleNumber.match(/-\d/)){
         return possibleNumber + " is a negative integer."
-    }else if(possibleNumber.match(/\d/)){
+    }else if(!possibleNumber.match(/\D/)){
         return possibleNumber + " is a positive integer."
+    }else {
+        return possibleNumber + " ain't a number."
     }
 }
 
@@ -313,6 +315,8 @@ console.log(numberDeets("-10"));
 console.log(numberDeets("10.1"));
 console.log(numberDeets("-10.1"));
 console.log(numberDeets("1e5"));
+
+console.log(numberDeets("1e2e8"));
 
 console.log(numberDeets("a"));
 console.log(numberDeets("x 1"));
