@@ -274,3 +274,47 @@ function countingChars(str){
 //Coding challenge #26: Create a function that will receive two arrays
 // and will return an array with elements that are in the first array but not in the second
 
+//Good morning! Here's your coding interview problem for today.
+//
+// This problem was asked by LinkedIn.
+//
+// Given a string, return whether it represents a number. Here are the different kinds of numbers:
+//
+// "10", a positive integer
+// "-10", a negative integer
+// "10.1", a positive real number
+// "-10.1", a negative real number
+// "1e5", a number in scientific notation
+// And here are examples of non-numbers:
+//
+// "a"
+// "x 1"
+// "a -2"
+// "-"
+
+function numberDeets(possibleNumber){
+    if(!possibleNumber.match(/\d/g) || possibleNumber.match(/[a-d f-z]/g)){
+        return possibleNumber + " ain't a number."
+    }else if(possibleNumber.match(/\d+e\d+/)){
+        return possibleNumber + " is a number in scientific notation."
+    }else if(possibleNumber.match(/-\d+\.\d+/)){
+        return possibleNumber + " is a negative real number."
+    }else if(possibleNumber.match(/\d+\.\d+/)){
+        return possibleNumber + " is a positive real number."
+    }else if(possibleNumber.match(/-\d/)){
+        return possibleNumber + " is a negative integer."
+    }else if(possibleNumber.match(/\d/)){
+        return possibleNumber + " is a positive integer."
+    }
+}
+
+console.log(numberDeets("10"));
+console.log(numberDeets("-10"));
+console.log(numberDeets("10.1"));
+console.log(numberDeets("-10.1"));
+console.log(numberDeets("1e5"));
+
+console.log(numberDeets("a"));
+console.log(numberDeets("x 1"));
+console.log(numberDeets("a -2"));
+console.log(numberDeets("-"));
