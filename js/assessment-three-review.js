@@ -69,3 +69,65 @@
 // console.log(orderDigits(4367))
 
 
+
+
+
+// Write a function called findWeapon that accepts a D&D character object and
+// returns a string of the name of their weapon
+
+var playerOne = {
+    name: "Murder Hobo",
+    class: "Barbarian",
+    inventory: [
+        {
+            itemName: "Health Potion",
+            itemType: "Potion"
+        },
+        {
+            itemName: "Deck of many things",
+            itemType: "Bad idea"
+        },
+        {
+            itemName: "Great Axe",
+            itemType: "Weapon"
+        }
+    ]
+}
+
+var playerTwo = {
+    name: "Min Max",
+    class: "Fighter",
+    inventory: [
+        {
+            itemName: "Long sword",
+            itemType: "Weapon"
+        },
+        {
+            itemName: "Ration",
+            itemType: "Annoying thing to track"
+        },
+        {
+            itemName: "Elephant",
+            itemType: "Mount"
+        }
+    ]
+}
+
+var playerThree = {
+    name: "Rules Lawyer",
+    class: "Wizard",
+    inventory: [
+        {
+            itemName: "Rat",
+            itemType: "Friend"
+        },
+        {
+            itemName: "Peasant rail gun",
+            itemType: "Weapon"
+        },
+        {
+            itemName: "Pointy Hat",
+            itemType: "Clothing"
+        }
+    ]
+}
