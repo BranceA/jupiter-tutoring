@@ -37,7 +37,7 @@ function lameRectangleMaker(recHeight, recWidth, recColor){
     document.body.append(newRectangle);
 }
 
-lameRectangleMaker(rectangleHeight, rectangleWidth, rectangleBackground);
+// lameRectangleMaker(rectangleHeight, rectangleWidth, rectangleBackground);
 
 
 
@@ -55,7 +55,7 @@ function makeRectangle(rectangleObject){
     document.body.append(newRectangle);
 }
 
-makeRectangle(rectangle);
+// makeRectangle(rectangle);
 
 
 var rectangles = [
@@ -76,7 +76,7 @@ var rectangles = [
     }
 ]
 
-rectangles.forEach(makeRectangle)
+// rectangles.forEach(makeRectangle)
 
 function makeRectangles(rectangleObjectArray){
     rectangleObjectArray.forEach(function (rectangle) {
