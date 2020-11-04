@@ -55,7 +55,7 @@ function makeRectangle(rectangleObject){
     document.body.append(newRectangle);
 }
 
-// makeRectangle(rectangle);
+makeRectangle(rectangle);
 
 
 var rectangles = [
@@ -75,6 +75,8 @@ var rectangles = [
         rectangleColor: "orange"
     }
 ]
+
+rectangles.forEach(makeRectangle)
 
 function makeRectangles(rectangleObjectArray){
     rectangleObjectArray.forEach(function (rectangle) {

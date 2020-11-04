@@ -17,8 +17,10 @@ var welcomeH1 = document.getElementById("welcome");
 
 
 // Use this to see all the properties of the element (or any javascript object).
-// console.dir(welcomeH1);
+console.dir(welcomeH1);
+var thatHThree = welcomeH1.nextElementSibling;
 
+console.dir(thatHThree)
 
 
 
@@ -33,8 +35,15 @@ var awesomeElements = document.getElementsByClassName("awesome-class");
 // document.getElementsByTagName("insertHtmlTag");
 // indiscriminately grabs every single tag you pass this method.
 // returns an array just like getElementsByClassName.
+var thatList = document.getElementsByTagName("ul");
+console.log(thatList);
+
 var powerRangers = document.getElementsByTagName("li");
-// console.log(powerRangers);
+console.dir(thatList[0]);
+
+for(let ranger of powerRangers){
+    console.log(ranger.innerText);
+}
 
 
 // Ok I have elements. Now how to I perform shenanigans?
@@ -48,10 +57,10 @@ var powerRangers = document.getElementsByTagName("li");
 var listTitle = document.getElementById("list-title");
 
 // This changes the text inside the html to "GO GO POWER RANGERS!!!"
-listTitle.innerText = "GO GO POWER RANGERS!!!";
+// listTitle.innerText = "GO GO POWER RANGERS!!!";
 
 
-// variableName.innerHtml --> Returns what html is in the html element.
+// variableName.innerHtml  --> Returns what html is in the html element.
 // variableName.innerHtml = "<p>Text in new html<p/>" --> Changes the html in the variable to a paragraph tag with
 // the text "Text in new html"
 

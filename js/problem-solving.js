@@ -1,6 +1,5 @@
 "use strict";
 
-
 // Write a function that accepts an array of names
 // and returns the name that starts with "j" and is alphabetically first.
 
@@ -200,7 +199,7 @@ function floyd(){
 function mostCommonChar(word){
     var wordArray = word.split("").sort();
     var currentHighestCount = 0;
-    var currentCharWinner = null;
+    var currentCharWinner = "";
     while(wordArray.length > 0){
         if(wordArray.lastIndexOf(wordArray[0]) + 1 > currentHighestCount && wordArray[0] !== currentCharWinner){
             currentCharWinner = wordArray[0];
@@ -222,6 +221,8 @@ function samsMostCommonChar(word){
         }else{
             tally[chars.indexOf(wordArray[i])] = tally[chars.indexOf(wordArray[i])] + 1;
         }
+        console.log(chars);
+        console.log(tally);
     }
     var highestTally = Math.max(...tally)
     var highestCharIndex = tally.indexOf(highestTally)
@@ -244,13 +245,51 @@ function countingChars(str){
     return maxChar;
 }
 
-// brance.log(mostCommonChar("banana"));
-// brance.log(mostCommonChar("tennessee"));
-// brance.log(mostCommonChar("potato"));
+// brance.log(samsMostCommonChar("banana"));
+// brance.log(samsMostCommonChar("tennessee"));
+// brance.log(samsMostCommonChar("potato"));
 
 
 //Given a string possibly containing three types of braces ({}, [], ()),
 //write a function that returns a Boolean indicating whether the given string contains a valid nesting of braces.
+
+
+// outside info is a string. 1 parameter.
+function isValidNesting(stringToCheck){
+    // I don't care about total
+    // I only care if they are even
+    var roundBraces = 0;
+    var squareBraces = 0;
+    var curlyBraces = 0;
+    // I want a loop
+    // I'm thinking for loop to iterate over the string
+    for(var i = 0; i < stringToCheck.length; i++){
+        var currentChar = stringToCheck.charAt(i);
+        //need condition to do appropriate math
+        switch (currentChar){
+            case "(":
+                roundBraces++
+                break;
+            case ")":
+                roundBraces--
+                break;
+            case "[":
+                squareBraces++
+                break;
+            case "]":
+                squareBraces--
+                break;
+            case "{":
+                curlyBraces++
+                break;
+            case "}":
+                curlyBraces--
+                break;
+        }
+    }
+    // If there are equal opening and closing braces then all variables will be 0
+    return roundBraces + squareBraces + curlyBraces === 0;
+}
 
 
 // brance.log(isValidNesting("if(this works) [we good] [probably] {At least I hope}"));
@@ -266,13 +305,50 @@ function countingChars(str){
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
 
+
+
+
+
+
 // https://codeguppy.com/code.html?RHA714FYio8gWgmjWYPz
 //Coding challenge #17: Calculate the sum of digits of a positive integer number
+
+
+
+
+
+
+
 
 
 //https://codeguppy.com/code.html?bUduoyY6FfwV5nQGdXzH
 //Coding challenge #26: Create a function that will receive two arrays
 // and will return an array with elements that are in the first array but not in the second
+
+// receive two arrays. this means two parameters
+
+function uniqueToFirstArray(arrayOne, arrayTwo){
+    // comparing the arrays
+    // some kind of loop possibly
+    // Going to need to loop through 1 or maybe both arrays
+
+    //keep in mind that it is elements in the first but not the second
+    //return an array with the stuff that meets criteria
+
+    var bucket = [];
+    arrayOne.forEach(function (value) {
+        //Which do I start with?
+        if(!arrayTwo.includes(value)){
+            bucket.push(value);
+        }
+    })
+    return bucket;
+}
+var testArr = [1, false, "dog", 3.14, "Hello"];
+var testArrTwo = [1, true, "cat", 3.14, "Hello"];
+
+// console.log(uniqueToFirstArray(testArr, testArrTwo));
+
 
 //Good morning! Here's your coding interview problem for today.
 //
@@ -310,15 +386,15 @@ function numberDeets(possibleNumber){
     }
 }
 
-console.log(numberDeets("10"));
-console.log(numberDeets("-10"));
-console.log(numberDeets("10.1"));
-console.log(numberDeets("-10.1"));
-console.log(numberDeets("1e5"));
-
-console.log(numberDeets("1e2e8"));
-
-console.log(numberDeets("a"));
-console.log(numberDeets("x 1"));
-console.log(numberDeets("a -2"));
-console.log(numberDeets("-"));
+// console.log(numberDeets("10"));
+// console.log(numberDeets("-10"));
+// console.log(numberDeets("10.1"));
+// console.log(numberDeets("-10.1"));
+// console.log(numberDeets("1e5"));
+//
+// console.log(numberDeets("1e2e8"));
+//
+// console.log(numberDeets("a"));
+// console.log(numberDeets("x 1"));
+// console.log(numberDeets("a -2"));
+// console.log(numberDeets("-"));
